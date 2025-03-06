@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b43adn50vf7l4"]
+
+[ext_resource type="Script" path="res://scenes/Worldborder.cs" id="1_trfy8"]
+
+[node name="worldborder" type="Area2D"]
+position = Vector2(63, 630)
+script = ExtResource("1_trfy8")
+metadata/_edit_group_ = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
